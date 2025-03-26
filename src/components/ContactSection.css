@@ -1,19 +1,89 @@
-/* src/components/ContactSection.css */
-
 /* Import Montserrat font for a modern look */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
 .contact-section {
   position: relative;
   padding: 120px 20px;
-  background: #001f3f; /* Dark blue background matching your policies section */
+  background: linear-gradient(135deg, #001f3f, #0057d9);
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
+/* Fondo animado con burbujas flotantes */
+.background-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bubble {
+  position: absolute;
+  background: rgba(46, 204, 113, 0.2);
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: float 12s infinite ease-in-out;
+}
+
+.bubble1 {
+  width: 50px;
+  height: 50px;
+  left: 20%;
+  bottom: -50px;
+  animation-duration: 12s;
+  animation-delay: 0s;
+}
+
+.bubble2 {
+  width: 80px;
+  height: 80px;
+  left: 70%;
+  bottom: -80px;
+  animation-duration: 15s;
+  animation-delay: 2s;
+}
+
+.bubble3 {
+  width: 40px;
+  height: 40px;
+  left: 40%;
+  bottom: -40px;
+  animation-duration: 10s;
+  animation-delay: 1s;
+}
+
+.bubble4 {
+  width: 60px;
+  height: 60px;
+  left: 85%;
+  bottom: -60px;
+  animation-duration: 18s;
+  animation-delay: 3s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-100px) translateX(20px);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-200px) translateX(-20px);
+    opacity: 0.7;
+  }
+}
+
+/* Contact container styling */
 .contact-container {
-  background: rgba(255, 255, 255, 0.95); /* Light container for contrast */
+  background: rgba(255, 255, 255, 0.95);
   border: 1px solid #e0e0e0;
   border-radius: 15px;
   padding: 60px;
@@ -21,13 +91,15 @@
   width: 100%;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
   font-family: 'Montserrat', sans-serif;
-  color: #333; /* Dark text for readability */
+  color: #333;
+  position: relative;
+  z-index: 1;
 }
 
 .contact-container h2 {
   text-align: center;
   margin-bottom: 30px;
-  color: #0d1b2a; /* Deep blue for the heading */
+  color: #0d1b2a;
   font-size: 2.5rem;
   font-weight: 600;
 }
@@ -41,6 +113,7 @@
 .input-group {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .input-group input {
@@ -101,4 +174,14 @@
   color: #28a745;
   font-weight: bold;
   margin-top: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 40px 20px;
+  }
+  .input-group {
+    flex-direction: column;
+  }
 }

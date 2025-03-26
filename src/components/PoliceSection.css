@@ -1,46 +1,80 @@
-/* Dark background for the entire section */
 .policies-section {
-    padding: 40px 20px;
-    background: #001f3f; /* Dark blue background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* Container with centered content */
-  .policies-container {
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-  }
-  
-  /* Title styling */
-  .policies-container h2 {
-    margin-bottom: 20px;
-    color: #ffffff;
-    font-size: 2rem;
-  }
-  
-  /* Flex list to display policy links side by side */
-  .policies-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-  }
-  
+  position: relative;
+  padding: 40px 20px;
+  background: #001f3f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
 
-  
-  .policies-container a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
+/* Overlay animado para dar dinamismo al fondo */
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, rgba(0,31,63,0.2), rgba(0,47,83,0.2));
+  animation: overlayMove 20s linear infinite;
+  z-index: 0;
+}
+
+@keyframes overlayMove {
+  0% {
+    transform: translate(-50%, -50%);
   }
-  
-  .policies-container a:hover {
-    color: #ff6f61;
+  50% {
+    transform: translate(-40%, -40%);
   }
-  
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+.policies-container {
+  position: relative;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 1;
+}
+
+.policies-container h2 {
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-size: 2rem;
+}
+
+.policies-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.policies-list li {
+  margin: 10px 0;
+}
+
+.policies-container a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.policies-container a:hover {
+  color: #2ecc40;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .policies-list {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

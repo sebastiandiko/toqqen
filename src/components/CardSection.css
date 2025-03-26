@@ -1,9 +1,7 @@
-/* src/components/CardSection.css */
-
 .cards-section {
   position: relative;
   padding: 60px 20px;
-  background-color: #f0f0f0; /* Fondo claro para contraste con partículas */
+  background: linear-gradient(135deg, #f8f8f8, #e8f8e8);
   overflow: hidden;
 }
 
@@ -19,29 +17,30 @@
 .cards-container {
   position: relative;
   display: flex;
-  flex-wrap: wrap;       /* Permite que se ajusten en múltiples filas si es necesario */
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;             /* Espaciado entre tarjetas */
+  gap: 30px;
   z-index: 1;
 }
 
 .card {
   background-color: #fff;
+  border-top: 4px solid #2ecc40;
   border-radius: 8px;
   padding: 20px;
   width: 300px;
-  box-shadow: 0 4px 12px rgba(46, 204, 113, 0.5); /* Sombra verde */
+  box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(46, 204, 113, 0.7);
+  box-shadow: 0 8px 20px rgba(46, 204, 113, 0.5);
 }
 
 .card h3 {
   margin-bottom: 10px;
-  color: #333;
+  color: #010f29;
   font-size: 1.5rem;
 }
 
@@ -49,4 +48,16 @@
   color: #555;
   font-size: 1rem;
   line-height: 1.5;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .card {
+    width: 90%;
+  }
 }

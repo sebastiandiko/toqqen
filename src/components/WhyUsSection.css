@@ -1,9 +1,8 @@
-/* src/components/WhyUsSection.css */
-
 .why-us {
   width: 100%;
   padding: 60px 20px;
-  background-color: #f9f9f9; /* Light background */
+  /* Fondo degradado suave que combina con la paleta */
+  background: linear-gradient(135deg, #f9f9f9, #e8f9e8);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,7 +11,8 @@
 .section-title {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #0d47a1; /* Dark blue */
+  /* Texto en un tono oscuro elegante */
+  color: #2c3e50;
   margin-bottom: 40px;
   text-align: center;
 }
@@ -37,8 +37,8 @@
 
 .feature-card {
   background: #fff;
-  border: 2px solid #0d47a1;
-  color: #0d47a1;
+  border: 2px solid #2ecc40; /* Borde verde */
+  color: #2c3e50; /* Texto oscuro */
   font-size: 1.1rem;
   box-shadow: 0 4px 10px rgba(46, 204, 113, 0.3);
 }
@@ -47,6 +47,7 @@
 @media (max-width: 768px) {
   .cards-row {
     flex-direction: column;
+    align-items: center;
   }
   .card {
     width: 100%;

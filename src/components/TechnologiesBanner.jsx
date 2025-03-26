@@ -1,5 +1,5 @@
-// src/components/TechnologiesBanner.jsx
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 import './TechnologiesBanner.css';
 import reactLogo from './assets/react.png';
 import javaLogo from './assets/javascript.png';
@@ -19,20 +19,38 @@ const technologies = [
   { name: 'Angular', img: angularLogo },
 ];
 
-/**
- * Componente TechnologiesBanner:
- * - Utiliza CSS Grid para distribuir cada logo en su propia celda.
- * - Muestra un título "Technologíes" centrado y elegante.
- * - Los logos se muestran grandes, centrados y estáticos.
- * - Al hacer hover sobre cada logo se activa un efecto de sombra verde y un leve escalado.
- */
 const TechnologiesBanner = () => {
+  const techItemsRef = useRef([]);
+  techItemsRef.current = [];
+  
+  const addToRefs = (el) => {
+    if (el && !techItemsRef.current.includes(el)) {
+      techItemsRef.current.push(el);
+    }
+  };
+
+  useEffect(() => {
+    gsap.from(".tech-title", {
+      duration: 1,
+      opacity: 0,
+      y: -20,
+      ease: "power3.out"
+    });
+    gsap.from(techItemsRef.current, {
+      duration: 1,
+      opacity: 0,
+      y: 20,
+      stagger: 0.2,
+      ease: "power3.out"
+    });
+  }, []);
+
   return (
     <section className="technologies-banner">
       <h2 className="tech-title">Technologíes</h2>
       <div className="tech-grid">
         {technologies.map((tech) => (
-          <div className="tech-item" key={tech.name}>
+          <div className="tech-item" key={tech.name} ref={addToRefs}>
             <img src={tech.img} alt={tech.name} />
           </div>
         ))}

@@ -1,6 +1,6 @@
-// src/components/CardsSection.jsx
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Particles from "react-tsparticles";
+import gsap from 'gsap';
 import './CardSection.css';
 
 const cardsData = [
@@ -24,7 +24,7 @@ const cardsData = [
 const particlesOptions = {
   fullScreen: { enable: false },
   background: {
-    color: { value: "#f0f0f0" }
+    color: { value: "transparent" }
   },
   particles: {
     number: {
@@ -32,7 +32,7 @@ const particlesOptions = {
       density: { enable: true, area: 800 }
     },
     color: {
-      value: ["#ff6f61", "#ffcc5c", "#88d8b0"]
+      value: ["#2ecc40", "#d0e7ff", "#022c43"]
     },
     shape: { type: "circle" },
     opacity: {
@@ -71,14 +71,26 @@ const particlesOptions = {
 };
 
 const CardsSection = () => {
+  const cardsRef = useRef([]);
+
+  useEffect(() => {
+    gsap.from(cardsRef.current, {
+      duration: 1,
+      opacity: 0,
+      y: 30,
+      stagger: 0.2,
+      ease: "power3.out"
+    });
+  }, []);
+
   return (
     <section className="cards-section">
       <div className="particles-container">
         <Particles id="tsparticles" options={particlesOptions} />
       </div>
       <div className="cards-container">
-        {cardsData.map(card => (
-          <div key={card.id} className="card">
+        {cardsData.map((card, index) => (
+          <div key={card.id} className="card" ref={el => cardsRef.current[index] = el}>
             <h3>{card.title}</h3>
             <p>{card.description}</p>
           </div>

@@ -1,9 +1,26 @@
-// src/components/AboutUs.jsx
-import React from 'react';
+import React, { useEffect } from 'react';
+import gsap from 'gsap';
 import './AboutUs.css';
 import homeImage from './assets/home.jpg';
 
 const AboutUs = () => {
+  useEffect(() => {
+    // Animación de entrada: el texto se desliza desde la izquierda y la imagen desde la derecha
+    gsap.from(".about-text", {
+      duration: 1.2,
+      x: -50,
+      opacity: 0,
+      ease: "power3.out"
+    });
+    gsap.from(".about-image", {
+      duration: 1.2,
+      x: 50,
+      opacity: 0,
+      ease: "power3.out",
+      delay: 0.3
+    });
+  }, []);
+
   return (
     <section className="about-us">
       <div className="overlay"></div>

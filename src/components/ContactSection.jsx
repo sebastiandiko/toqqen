@@ -1,4 +1,3 @@
-// src/components/ContactSection.jsx
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import { motion } from 'framer-motion';
@@ -27,6 +26,12 @@ const ContactSection = () => {
 
   return (
     <section className="contact-section" id="contact">
+      <div className="background-animation">
+        <div className="bubble bubble1"></div>
+        <div className="bubble bubble2"></div>
+        <div className="bubble bubble3"></div>
+        <div className="bubble bubble4"></div>
+      </div>
       <motion.div 
         className="contact-container"
         initial={{ opacity: 0, y: 50 }}
