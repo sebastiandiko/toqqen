@@ -12,8 +12,13 @@ import ContactSection from './components/ContactSection';
 import PoliciesSection from './components/PoliceSection';
 
 function App() {
-  // Estado de idioma (por defecto, 'es')
-  const [language, setLanguage] = useState('en');
+  // 1. Detectamos el idioma del navegador:
+  const userLang = navigator.language || navigator.userLanguage;
+  // 2. Si empieza con "es", usamos "es". Si no, "en".
+  const defaultLang = userLang.toLowerCase().startsWith('es') ? 'es' : 'en';
+
+  // 3. Iniciamos el estado con el idioma detectado
+  const [language, setLanguage] = useState(defaultLang);
 
   return (
     <div className="App">
@@ -24,10 +29,8 @@ function App() {
         <Banner />
         <CardsSection />
         <AboutUs />
-
         {/* Pasamos el idioma al componente Steps */}
         <Steps language={language} />
-
         <TechnologiesBanner />
         <WhyUsSection />
         <ContactSection />
