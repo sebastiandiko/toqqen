@@ -1,7 +1,7 @@
 {
   "name": "toqqen",
   "version": "0.1.0",
-  "homepage": "https://sebastiandiko.github.io/toqqen",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@react-three/fiber": "^9.1.0",
