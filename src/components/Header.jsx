@@ -9,7 +9,6 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isEnglish, setIsEnglish] = useState(true);
 
-  // Detecta el idioma por defecto basado en navigator.language
   useEffect(() => {
     const userLang = navigator.language || navigator.userLanguage;
     if (userLang.toLowerCase().startsWith('es')) {
@@ -25,7 +24,6 @@ const Header = () => {
     setMenuOpen(!menuOpen);
   };
 
-  // Cambia el idioma y actualiza el estado del toggle
   const handleLanguageToggle = () => {
     if (isEnglish) {
       i18n.changeLanguage('es');

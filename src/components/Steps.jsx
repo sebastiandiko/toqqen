@@ -1,5 +1,6 @@
 // Steps.jsx
 import React from 'react';
+import { useTranslation } from 'react-i18next'; // <-- Importa useTranslation
 import './Steps.css';
 
 // Imágenes para español
@@ -16,10 +17,15 @@ import enStep3 from '../assets/english/3.png';
 import enStep4 from '../assets/english/4.png';
 import enStep5 from '../assets/english/5.png';
 
-const Steps = ({ language = 'es' }) => {
-  // Escoger el conjunto de imágenes según el idioma
+const Steps = () => {
+  const { i18n } = useTranslation();
+
+  // Determina el idioma actual: 'es' o 'en'
+  const currentLang = i18n.language.startsWith('es') ? 'es' : 'en';
+
+  // Selecciona imágenes según el idioma actual
   let stepsImages = [];
-  if (language === 'en') {
+  if (currentLang === 'en') {
     stepsImages = [enStep1, enStep2, enStep3, enStep4, enStep5];
   } else {
     stepsImages = [esStep1, esStep2, esStep3, esStep4, esStep5];
@@ -32,7 +38,7 @@ const Steps = ({ language = 'es' }) => {
           <img
             key={index}
             src={img}
-            alt={`Step ${index + 1}`}
+            alt={`Paso ${index + 1}`}
           />
         ))}
       </div>
