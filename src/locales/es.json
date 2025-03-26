@@ -1,0 +1,31 @@
+{
+    "header": {
+      "home": "Inicio",
+      "aboutUs": "Sobre Nosotros",
+      "contactUs": "Contacto"
+    },
+    "about": {
+      "title": "Sobre Nosotros",
+      "text": "En Toqqen, creemos que cada desafío presenta una oportunidad. Aprovechando la tecnología de vanguardia, ofrecemos soluciones innovadoras que permiten a tu negocio prosperar en un entorno digital dinámico. Con pasión y precisión, nuestro equipo se compromete a redefinir las experiencias digitales."
+    },
+    "contact": {
+      "title": "¡Trabajemos Juntos!",
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "email": "Correo Electrónico",
+      "phone": "Teléfono (Opcional)",
+      "message": "Ingresa tu mensaje aquí...",
+      "sendButton": "Enviar Mensaje",
+      "success": "¡Mensaje enviado exitosamente!",
+      "error": "Ocurrió un error al enviar tu mensaje. Por favor, inténtalo de nuevo."
+    },
+    "policies": {
+      "title": "Nuestras Políticas",
+      "privacy": "Política de Privacidad",
+      "cookies": "Política de Cookies",
+      "terms": "Términos y Condiciones",
+      "legal": "Aviso Legal",
+      "delivery": "Política de Entrega"
+    }
+  }
+  

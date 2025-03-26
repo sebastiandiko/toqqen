@@ -1,25 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import Particles from "react-tsparticles";
 import gsap from 'gsap';
+import { useTranslation } from 'react-i18next';
 import './CardSection.css';
-
-const cardsData = [
-  {
-    id: 1,
-    title: 'Premium Quality',
-    description: 'Our digital solutions, including progressive web applications, websites, and custom technological resources, are crafted with the highest standards using state-of-the-art tools. We deliver optimized, secure, and reliable products that consistently exceed client expectations.'
-  },
-  {
-    id: 2,
-    title: 'Continuous Innovation',
-    description: 'Always at the cutting edge, we integrate the latest trends and technologies to develop modern and responsive digital solutions. Whether you require a robust PWA, a dynamic website, or other tailored tech resources, our innovative approach ensures you stay ahead in the digital landscape.'
-  },
-  {
-    id: 3,
-    title: '24/7 Expert Support',
-    description: 'Our dedicated support team is available around the clock to assist you with every aspect of your digital projects. From the initial consultation to post-launch maintenance, we provide personalized and timely support to ensure your digital presence is always performing at its peak.'
-  }
-];
 
 const particlesOptions = {
   fullScreen: { enable: false },
@@ -71,6 +54,27 @@ const particlesOptions = {
 };
 
 const CardsSection = () => {
+  const { t } = useTranslation();
+
+  // Se definen los datos de las tarjetas usando las claves de traducción
+  const cardsData = [
+    {
+      id: 1,
+      title: t('cards.premiumQuality.title'),
+      description: t('cards.premiumQuality.description')
+    },
+    {
+      id: 2,
+      title: t('cards.continuousInnovation.title'),
+      description: t('cards.continuousInnovation.description')
+    },
+    {
+      id: 3,
+      title: t('cards.expertSupport.title'),
+      description: t('cards.expertSupport.description')
+    }
+  ];
+
   const cardsRef = useRef([]);
 
   useEffect(() => {

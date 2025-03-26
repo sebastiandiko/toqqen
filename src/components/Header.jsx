@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
 import { Link } from 'react-scroll';
+import { useTranslation } from 'react-i18next';
 import './Header.css';
 import logo from './assets/logo.png';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { t, i18n } = useTranslation();
 
   const handleMenuToggle = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
   };
 
   return (
@@ -16,6 +22,10 @@ const Header = () => {
         <div className="menu-placeholder"></div>
         <div className="logo">
           <img src={logo} alt="Logo" />
+        </div>
+        <div className="language-switcher">
+          <button onClick={() => changeLanguage('en')}>EN</button>
+          <button onClick={() => changeLanguage('es')}>ES</button>
         </div>
         <button className="menu-toggle" onClick={handleMenuToggle}>
           <span className="bar"></span>
@@ -33,7 +43,7 @@ const Header = () => {
               offset={-70}
               onClick={() => setMenuOpen(false)}
             >
-              Home
+              {t('header.home')}
             </Link>
           </li>
           <li>
@@ -44,7 +54,7 @@ const Header = () => {
               offset={-70}
               onClick={() => setMenuOpen(false)}
             >
-              About Us
+              {t('header.aboutUs')}
             </Link>
           </li>
           <li>
@@ -55,7 +65,7 @@ const Header = () => {
               offset={-70}
               onClick={() => setMenuOpen(false)}
             >
-              Contact Us
+              {t('header.contactUs')}
             </Link>
           </li>
         </ul>

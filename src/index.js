@@ -9,6 +9,7 @@ import TermsAndConditions from './components/TermsAndConditions';
 import LegalNotice from './components/LegalNotice.jsx';
 import DeliveryPolicy from './components/DeliveryPolicy';
 import './index.css';
+import './i18n';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -32,6 +32,28 @@
   width: auto;
 }
 
+/* Language switcher */
+.language-switcher {
+  display: flex;
+  gap: 10px;
+}
+
+.language-switcher button {
+  background: transparent;
+  border: 1px solid #d0e7ff;
+  color: #d0e7ff;
+  padding: 5px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.language-switcher button:hover {
+  background-color: #d0e7ff;
+  color: #010f29;
+}
+
 /* Botón de menú (hamburguesa) para mobile */
 .menu-toggle {
   background: transparent;
@@ -77,13 +99,15 @@
 
 .nav-menu li a:hover {
   transform: scale(1.05);
-  background-color: rgba(241, 196, 15, 0.2);
+  background-color: rgba(46, 204, 113, 0.2);
 }
 
 /* Responsividad para dispositivos móviles */
 @media (max-width: 768px) {
   .header-top {
     padding: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
   }
   
   .menu-toggle {
