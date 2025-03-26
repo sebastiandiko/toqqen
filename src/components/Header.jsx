@@ -1,23 +1,38 @@
-// src/components/Header.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-scroll';
 import './Header.css';
-import logo from './assets/logo.png'; // Adjust the path as needed
+import logo from './assets/logo.png';
 
 const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleMenuToggle = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <header className="main-header">
-      <div className="logo">
-        <img src={logo} alt="Logo" />
+      <div className="header-top">
+        {/* Placeholder para balancear el layout y centrar el logo */}
+        <div className="menu-placeholder"></div>
+        <div className="logo">
+          <img src={logo} alt="Logo" />
+        </div>
+        <button className="menu-toggle" onClick={handleMenuToggle}>
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </button>
       </div>
-      <nav className="nav-menu">
+      <nav className={`nav-menu ${menuOpen ? 'active' : ''}`}>
         <ul>
           <li>
             <Link 
               to="inicio" 
               smooth={true} 
               duration={500} 
-              offset={-70} // adjust for fixed header if needed
+              offset={-70}
+              onClick={() => setMenuOpen(false)}
             >
               Home
             </Link>
@@ -28,6 +43,7 @@ const Header = () => {
               smooth={true} 
               duration={500}
               offset={-70}
+              onClick={() => setMenuOpen(false)}
             >
               About Us
             </Link>
@@ -38,6 +54,7 @@ const Header = () => {
               smooth={true} 
               duration={500}
               offset={-70}
+              onClick={() => setMenuOpen(false)}
             >
               Contact Us
             </Link>
