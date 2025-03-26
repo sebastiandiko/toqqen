@@ -9,15 +9,15 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  overflow-x: hidden; /* Evita el scroll horizontal */
+  /* 1) Cambiamos a visible para que el menú no se oculte */
+  overflow: visible; 
   background: linear-gradient(45deg, #010f29, #022c43);
   background-size: 200% 200%;
   animation: backgroundShift 10s ease infinite;
-  /* --- CAMBIO: Fijamos el header al top --- */
-  position: fixed;
+  position: fixed; /* Para que el header sea fijo */
   top: 0;
   left: 0;
-  z-index: 999; /* Para que quede por encima del contenido */
+  z-index: 999; /* El header estará por encima del contenido */
 }
 
 @keyframes backgroundShift {
@@ -175,7 +175,8 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
-    z-index: 10;
+    /* 2) Subimos z-index para que aparezca sobre el header */
+    z-index: 999; 
   }
   
   .nav-menu.active {
@@ -194,7 +195,11 @@
   }
 }
 
-/* --- NUEVA REGLA: Evita que el contenido quede oculto tras el header fijo --- */
+/* 
+   Por último: Asegúrate de que tu contenido principal (ej. main) 
+   tenga un padding-top suficiente para no quedar bajo el header fijo.
+   Por ejemplo:
+*/
 main {
-  padding-top: 100px; /* Ajusta este valor a la altura real de tu header */
+  padding-top: 80px; /* Ajusta según la altura real del header */
 }
