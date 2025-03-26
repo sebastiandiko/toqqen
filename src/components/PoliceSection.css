@@ -1,0 +1,46 @@
+/* Dark background for the entire section */
+.policies-section {
+    padding: 40px 20px;
+    background: #001f3f; /* Dark blue background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Container with centered content */
+  .policies-container {
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  /* Title styling */
+  .policies-container h2 {
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 2rem;
+  }
+  
+  /* Flex list to display policy links side by side */
+  .policies-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+
+  
+  .policies-container a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .policies-container a:hover {
+    color: #ff6f61;
+  }
+  

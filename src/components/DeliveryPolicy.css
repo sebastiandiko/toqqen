@@ -1,0 +1,62 @@
+/* src/components/DeliveryPolicy.css */
+
+.delivery-policy {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    background-color: #121212; /* Fondo oscuro */
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .policy-container {
+    max-width: 800px;
+    width: 100%;
+    background: #1e1e1e;
+    padding: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    color: #eee;
+  }
+  
+  .policy-container h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .policy-date {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .policy-section {
+    margin-bottom: 30px;
+  }
+  
+  .policy-section h2 {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #2ecc40;
+    padding-bottom: 5px;
+  }
+  
+  .policy-section p,
+  .policy-section ul {
+    font-size: 1rem;
+    color: #ccc;
+    line-height: 1.8;
+  }
+  
+  .policy-section ul {
+    margin-left: 20px;
+    list-style-type: disc;
+  }
+  
+  .policy-section ul li {
+    margin-bottom: 10px;
+  }
+  

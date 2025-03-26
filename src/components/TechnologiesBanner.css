@@ -1,0 +1,59 @@
+/* src/components/TechnologiesBanner.css */
+
+.technologies-banner {
+  width: 100%;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #001f3f, #003366);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech-title {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 2.5rem;
+  color: #d0e7ff;
+  margin-bottom: 30px;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tech-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.tech-item img {
+  width: 150px;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.tech-item:hover {
+  box-shadow: 0 0 20px 5px rgba(46, 204, 113, 0.5);
+  border-radius: 8px;
+}
+
+.tech-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .tech-item img {
+    width: 100px;
+  }
+}

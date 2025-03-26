@@ -1,0 +1,108 @@
+/* src/components/Header.css */
+
+/* Animación para el fondo en movimiento */
+@keyframes backgroundShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(45deg, #001f3f, #003366);
+  background-size: 200% 200%;
+  animation: backgroundShift 10s ease infinite;
+  padding: 20px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Estilo para el logo */
+.logo {
+  font-size: 1.8rem;
+  color: #d0e7ff;
+  font-weight: bold;
+}
+
+.logo img {
+  height: 50px; /* Ajusta según sea necesario */
+  width: auto;
+}
+
+/* Estilos para el menú de navegación */
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: #d0e7ff;
+  font-size: 1.1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Efecto subrayado animado en hover */
+.nav-menu li a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background-color: #2ecc40;
+  transition: width 0.3s ease;
+}
+
+.nav-menu li a:hover::after {
+  width: 100%;
+}
+
+.nav-menu li a:hover {
+  color: #2ecc40;
+}
+
+/* Estilos para el botón de llamada a la acción */
+.cta-button {
+  background: linear-gradient(45deg, #2ecc40, #27ae60);
+  border: none;
+  padding: 12px 30px;
+  font-size: 1rem;
+  color: #fff;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:active {
+  transform: scale(0.98);
+}
+
+/* Estilos responsive para dispositivos móviles */
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px 0;
+  }
+  
+  .cta-button {
+    margin-top: 10px;
+  }
+}

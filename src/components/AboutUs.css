@@ -1,0 +1,91 @@
+/* src/components/aboutUs.css */
+
+.about-us {
+    position: relative;
+    overflow: hidden;
+    padding: 60px 40px;
+    background: #001f3f; /* Azul oscuro base */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Overlay animado para dar movimiento y dinamismo al fondo */
+  .about-us .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, rgba(0, 47, 83, 0.3), rgba(0, 31, 63, 0.3));
+    animation: backgroundMove 20s linear infinite;
+    z-index: 1;
+  }
+  
+  @keyframes backgroundMove {
+    0% {
+      transform: translate(-50%, -50%);
+    }
+    50% {
+      transform: translate(-40%, -40%);
+    }
+    100% {
+      transform: translate(-50%, -50%);
+    }
+  }
+  
+  /* Contenedor de contenido para posicionarlo por encima del overlay */
+  .about-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 1200px;
+    width: 100%;
+  }
+  
+  .about-text {
+    flex: 1;
+    color: #d0e7ff; /* Azul clarito para el texto */
+  }
+  
+  .about-text h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+  }
+  
+  .about-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  .about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .about-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s ease;
+  }
+  
+  .about-image img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Responsividad: en dispositivos móviles se apila el contenido verticalmente */
+  @media (max-width: 768px) {
+    .about-content {
+      flex-direction: column;
+      text-align: center;
+    }
+    .about-image {
+      margin-top: 20px;
+    }
+  }
+  
