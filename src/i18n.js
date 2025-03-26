@@ -1,20 +1,20 @@
-// src/i18n.js
+// i18n.js
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+// Importa tus JSON de traducción (ejemplo)
+import translationES from './locales/es.json';
+import translationEN from './locales/en.json';
 
-// Archivos de traducción (puedes almacenarlos en un folder "locales")
-import enTranslation from './locales/en.json';
-import esTranslation from './locales/es.json';
-
+// Configuración
 i18n
   .use(initReactI18next)
   .init({
     resources: {
-      en: { translation: enTranslation },
-      es: { translation: esTranslation }
+      es: { translation: translationES },
+      en: { translation: translationEN }
     },
-    lng: 'en', // Idioma por defecto
-    fallbackLng: 'en',
+    lng: 'en',            // idioma por defecto
+    fallbackLng: 'en',    // si no encuentra 'es', usa 'en'
     interpolation: { escapeValue: false }
   });
 
