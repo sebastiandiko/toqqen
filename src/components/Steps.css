@@ -1,0 +1,39 @@
+/* Steps.css */
+
+/* Contenedor principal */
+.steps-wrapper {
+    width: 100%;
+    margin: 0 auto; /* Centrar si hiciera falta */
+  }
+  
+  /* Para pantallas pequeñas (por defecto): 
+     las imágenes se apilan (una debajo de otra) 
+     cada imagen ocupa el 100% del contenedor */
+  .steps-container {
+    display: block;
+  }
+  
+  .steps-container img {
+    width: 100%;
+    height: auto;
+    display: block; /* Para que cada imagen inicie en una nueva línea */
+    margin: 0 auto; /* Opcional: centrar la imagen si tuviera menos de 100% */
+  }
+  
+  /* A partir de 768px: creamos una cuadrícula de 5 columnas, 
+     de modo que cada imagen ocupe 1 fracción */
+  @media (min-width: 768px) {
+    .steps-container {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      /* Puedes agregar gap si deseas espacio entre imágenes, por ejemplo:
+         gap: 1rem; 
+         pero si lo haces, las imágenes no tendrán exactamente 20% cada una. */
+    }
+  
+    /* En la cuadrícula, cada imagen ocupa automáticamente todo su celda */
+    .steps-container img {
+      width: 100%;
+    }
+  }
+  
