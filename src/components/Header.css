@@ -13,7 +13,11 @@
   background: linear-gradient(45deg, #010f29, #022c43);
   background-size: 200% 200%;
   animation: backgroundShift 10s ease infinite;
-  position: relative;
+  /* --- CAMBIO: Fijamos el header al top --- */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999; /* Para que quede por encima del contenido */
 }
 
 @keyframes backgroundShift {
@@ -188,4 +192,9 @@
   .nav-menu li {
     text-align: center;
   }
+}
+
+/* --- NUEVA REGLA: Evita que el contenido quede oculto tras el header fijo --- */
+main {
+  padding-top: 100px; /* Ajusta este valor a la altura real de tu header */
 }

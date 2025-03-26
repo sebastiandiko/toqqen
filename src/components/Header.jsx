@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+// Header.jsx
+import React, { useState } from 'react';
 import { Link } from 'react-scroll';
 import { useTranslation } from 'react-i18next';
 import './Header.css';
@@ -7,23 +8,16 @@ import logo from './assets/logo.png';
 const Header = () => {
   const { t, i18n } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isEnglish, setIsEnglish] = useState(true);
 
-  useEffect(() => {
-    const userLang = navigator.language || navigator.userLanguage;
-    if (userLang.toLowerCase().startsWith('es')) {
-      i18n.changeLanguage('es');
-      setIsEnglish(false);
-    } else {
-      i18n.changeLanguage('en');
-      setIsEnglish(true);
-    }
-  }, [i18n]);
+  // En lugar de detectar el idioma, iniciamos "isEnglish" a true
+  // para que el switch comience siempre en inglés.
+  const [isEnglish, setIsEnglish] = useState(true);
 
   const handleMenuToggle = () => {
     setMenuOpen(!menuOpen);
   };
 
+  // Cambia el idioma y actualiza el estado del toggle
   const handleLanguageToggle = () => {
     if (isEnglish) {
       i18n.changeLanguage('es');
