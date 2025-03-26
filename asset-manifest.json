@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/toqqen/static/css/main.fb6e13ac.css",
+    "main.js": "/toqqen/static/js/main.b10b6c40.js",
+    "static/media/home.jpg": "/toqqen/static/media/home.8df10722d266f1e5c17e.jpg",
+    "static/media/react.png": "/toqqen/static/media/react.70ff5ce006f1f1d73591.png",
+    "static/media/angular.png": "/toqqen/static/media/angular.aae8c6b1f4b3896f9e20.png",
+    "static/media/sql.png": "/toqqen/static/media/sql.946a4fc62c88482507d2.png",
+    "static/media/logo.png": "/toqqen/static/media/logo.d9a280ebb90bde134743.png",
+    "static/media/python.png": "/toqqen/static/media/python.5c82a9bcfcdb4c9afb77.png",
+    "static/media/javascript.png": "/toqqen/static/media/javascript.489b5b184f501f75b2d0.png",
+    "static/media/typescript.png": "/toqqen/static/media/typescript.dbf6cc9931e828716dfc.png",
+    "static/media/pwa.png": "/toqqen/static/media/pwa.6a5c392a8d5b4ccec5ce.png",
+    "static/media/logo.svg": "/toqqen/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/toqqen/index.html",
+    "main.fb6e13ac.css.map": "/toqqen/static/css/main.fb6e13ac.css.map",
+    "main.b10b6c40.js.map": "/toqqen/static/js/main.b10b6c40.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fb6e13ac.css",
+    "static/js/main.b10b6c40.js"
+  ]
+}
