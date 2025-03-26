@@ -13,7 +13,6 @@ const Header = () => {
   return (
     <header className="main-header">
       <div className="header-top">
-        {/* Placeholder para balancear el layout y centrar el logo */}
         <div className="menu-placeholder"></div>
         <div className="logo">
           <img src={logo} alt="Logo" />
@@ -27,10 +26,10 @@ const Header = () => {
       <nav className={`nav-menu ${menuOpen ? 'active' : ''}`}>
         <ul>
           <li>
-            <Link 
-              to="inicio" 
-              smooth={true} 
-              duration={500} 
+            <Link
+              to="inicio"
+              smooth={true}
+              duration={500}
               offset={-70}
               onClick={() => setMenuOpen(false)}
             >
@@ -38,9 +37,9 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link 
-              to="about-us" 
-              smooth={true} 
+            <Link
+              to="about-us"
+              smooth={true}
               duration={500}
               offset={-70}
               onClick={() => setMenuOpen(false)}
@@ -49,9 +48,9 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link 
-              to="contact" 
-              smooth={true} 
+            <Link
+              to="contact"
+              smooth={true}
               duration={500}
               offset={-70}
               onClick={() => setMenuOpen(false)}

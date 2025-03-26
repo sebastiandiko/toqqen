@@ -1,16 +1,16 @@
-// src/components/Banner.jsx
 import React, { useState, useEffect, useRef } from 'react';
+import gsap from 'gsap';
 import './Banner.css';
 
 const DEFAULT_NUM_ICONS = 50;
 
-// Definición de los íconos con data URLs
+// Actualización de los íconos SVG con nuevos colores complementarios:
 const gearIcon = "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(
-  '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#add8e6" viewBox="0 0 24 24"><path d="M12 2L2 7v10l10 5 10-5V7L12 2zM12 4.21l7 3.36v7.05l-7 3.5-7-3.5V7.57l7-3.36z"/></svg>'
+  '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#f1c40f" viewBox="0 0 24 24"><path d="M12 2L2 7v10l10 5 10-5V7L12 2zM12 4.21l7 3.36v7.05l-7 3.5-7-3.5V7.57l7-3.36z"/></svg>'
 );
 
 const gridIcon = "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(
-  '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#add8e6" viewBox="0 0 24 24"><path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zm-10 10h8v8H3v-8zm10 0h8v8h-8v-8z"/></svg>'
+  '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#2ecc40" viewBox="0 0 24 24"><path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zm-10 10h8v8H3v-8zm10 0h8v8h-8v-8z"/></svg>'
 );
 
 const iconSvgs = [gearIcon, gridIcon];
@@ -61,6 +61,12 @@ const Banner = ({ numIcons = DEFAULT_NUM_ICONS }) => {
   };
 
   useEffect(() => {
+    const tl = gsap.timeline();
+    // Animación del título: fade in, desplazamiento vertical y sutil escalado.
+    tl.from(".title", { duration: 1.2, opacity: 0, y: -50, ease: "power3.out" })
+      // Animación de los íconos: escalado desde 0.8 hasta 1 y fade in con stagger.
+      .from(".tech-icon", { duration: 1, scale: 0.8, opacity: 0, stagger: 0.02, ease: "back.out(1.7)" }, "-=0.5");
+
     animationRef.current = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(animationRef.current);
   }, []);

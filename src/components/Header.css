@@ -1,18 +1,21 @@
-/* Animación para el fondo en movimiento */
+/* Fondo con degradado que complementa al banner */
+.main-header {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(45deg, #010f29, #022c43);
+  background-size: 200% 200%;
+  animation: backgroundShift 10s ease infinite;
+  position: relative;
+}
+
+/* Animación del degradado */
 @keyframes backgroundShift {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-.main-header {
-  background: linear-gradient(45deg, #001f3f, #003366);
-  background-size: 200% 200%;
-  animation: backgroundShift 10s ease infinite;
-  position: relative;
-}
-
-/* Header Top: contiene el placeholder, el logo y el botón de menú */
+/* Encabezado superior */
 .header-top {
   display: flex;
   align-items: center;
@@ -20,23 +23,21 @@
   padding: 20px 40px;
 }
 
-/* Placeholder para centrar el logo */
 .menu-placeholder {
-  width: 25px; /* mismo ancho que el botón de menú */
+  width: 25px; /* Mismo ancho que el botón de menú */
 }
 
-/* Estilo para el logo */
 .logo img {
   height: 50px;
   width: auto;
 }
 
-/* Botón de menú (hamburguesa) */
+/* Botón de menú (hamburguesa) para mobile */
 .menu-toggle {
   background: transparent;
   border: none;
   cursor: pointer;
-  display: none; /* Se muestra solo en mobile */
+  display: none;
 }
 
 .menu-toggle .bar {
@@ -48,7 +49,7 @@
   transition: all 0.3s ease;
 }
 
-/* Menú de navegación (desktop) */
+/* Menú de navegación en desktop */
 .nav-menu {
   display: flex;
   justify-content: center;
@@ -67,29 +68,19 @@
   color: #d0e7ff;
   font-size: 1.1rem;
   position: relative;
-  transition: color 0.3s ease;
-}
-
-.nav-menu li a::after {
-  content: '';
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  bottom: -3px;
-  left: 0;
-  background-color: #2ecc40;
-  transition: width 0.3s ease;
-}
-
-.nav-menu li a:hover::after {
-  width: 100%;
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .nav-menu li a:hover {
-  color: #2ecc40;
+  transform: scale(1.05);
+  background-color: rgba(241, 196, 15, 0.2);
 }
 
-/* Estilos responsive para dispositivos móviles */
+/* Responsividad para dispositivos móviles */
 @media (max-width: 768px) {
   .header-top {
     padding: 20px;
@@ -99,11 +90,9 @@
     display: block;
   }
   
-  /* Usamos max-height para crear la animación de slide-down */
   .nav-menu {
-    display: flex;
     flex-direction: column;
-    background: #001f3f;
+    background: #010f29;
     position: absolute;
     top: 100%;
     left: 0;
@@ -115,7 +104,7 @@
   }
   
   .nav-menu.active {
-    max-height: 300px; /* Ajusta este valor según la cantidad de elementos */
+    max-height: 300px;
   }
   
   .nav-menu ul {
