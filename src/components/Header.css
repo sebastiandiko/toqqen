@@ -1,30 +1,38 @@
-/* Fondo con degradado que complementa al banner */
+/* Asegura que el box-sizing sea border-box para evitar desbordamientos */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 .main-header {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  overflow-x: hidden; /* Evita el scroll horizontal */
   background: linear-gradient(45deg, #010f29, #022c43);
   background-size: 200% 200%;
   animation: backgroundShift 10s ease infinite;
   position: relative;
 }
 
-/* Animación del degradado */
 @keyframes backgroundShift {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* Encabezado superior */
 .header-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px 40px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .menu-placeholder {
-  width: 25px; /* Mismo ancho que el botón de menú */
+  width: 25px;
 }
 
 .logo img {
@@ -75,6 +83,7 @@
 .nav-menu {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .nav-menu ul {
