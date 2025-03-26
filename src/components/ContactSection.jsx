@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import './ContactSection.css';
 
 const ContactSection = () => {
+  const { t } = useTranslation();
   const [successMessage, setSuccessMessage] = useState('');
 
   const sendEmail = (e) => {
@@ -16,11 +18,11 @@ const ContactSection = () => {
     )
     .then((result) => {
       console.log(result.text);
-      setSuccessMessage('Message sent successfully!');
+      setSuccessMessage(t('contact.success'));
       e.target.reset();
     }, (error) => {
       console.log(error.text);
-      setSuccessMessage('There was an error sending your message. Please try again.');
+      setSuccessMessage(t('contact.error'));
     });
   };
 
@@ -38,18 +40,18 @@ const ContactSection = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h2>Let's Work Together!</h2>
+        <h2>{t('contact.title')}</h2>
         <form className="contact-form" onSubmit={sendEmail}>
           <div className="input-group">
-            <input type="text" name="firstName" placeholder="First Name" required />
-            <input type="text" name="lastName" placeholder="Last Name" required />
+            <input type="text" name="firstName" placeholder={t('contact.firstName')} required />
+            <input type="text" name="lastName" placeholder={t('contact.lastName')} required />
           </div>
           <div className="input-group">
-            <input type="email" name="email" placeholder="Email Address" required />
-            <input type="text" name="phone" placeholder="Phone (Optional)" />
+            <input type="email" name="email" placeholder={t('contact.email')} required />
+            <input type="text" name="phone" placeholder={t('contact.phone')} />
           </div>
-          <textarea name="message" placeholder="Enter your message here..." required></textarea>
-          <button type="submit">Send Message</button>
+          <textarea name="message" placeholder={t('contact.message')} required></textarea>
+          <button type="submit">{t('contact.sendButton')}</button>
           {successMessage && <p className="success-message">{successMessage}</p>}
         </form>
       </motion.div>

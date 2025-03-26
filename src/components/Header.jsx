@@ -1,19 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
 import { useTranslation } from 'react-i18next';
 import './Header.css';
 import logo from './assets/logo.png';
 
 const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
   const { t, i18n } = useTranslation();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [isEnglish, setIsEnglish] = useState(true);
+
+  // Detecta el idioma por defecto basado en navigator.language
+  useEffect(() => {
+    const userLang = navigator.language || navigator.userLanguage;
+    if (userLang.toLowerCase().startsWith('es')) {
+      i18n.changeLanguage('es');
+      setIsEnglish(false);
+    } else {
+      i18n.changeLanguage('en');
+      setIsEnglish(true);
+    }
+  }, [i18n]);
 
   const handleMenuToggle = () => {
     setMenuOpen(!menuOpen);
   };
 
-  const changeLanguage = (lang) => {
-    i18n.changeLanguage(lang);
+  // Cambia el idioma y actualiza el estado del toggle
+  const handleLanguageToggle = () => {
+    if (isEnglish) {
+      i18n.changeLanguage('es');
+      setIsEnglish(false);
+    } else {
+      i18n.changeLanguage('en');
+      setIsEnglish(true);
+    }
   };
 
   return (
@@ -23,9 +43,17 @@ const Header = () => {
         <div className="logo">
           <img src={logo} alt="Logo" />
         </div>
+        {/* Toggle Switch para el idioma */}
         <div className="language-switcher">
-          <button onClick={() => changeLanguage('en')}>EN</button>
-          <button onClick={() => changeLanguage('es')}>ES</button>
+          <label className="switch">
+            <input
+              type="checkbox"
+              checked={isEnglish}
+              onChange={handleLanguageToggle}
+            />
+            <span className="slider"></span>
+          </label>
+          <span className="lang-label">{isEnglish ? 'EN' : 'ES'}</span>
         </div>
         <button className="menu-toggle" onClick={handleMenuToggle}>
           <span className="bar"></span>

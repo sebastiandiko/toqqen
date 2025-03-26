@@ -1,12 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import './WhyUsSection.css';
-
-const features = [
-  "Continuous Innovation",
-  "Personalized Attention",
-  "24/7 Expert Support"
-];
 
 const containerVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -27,6 +22,10 @@ const cardVariants = {
 };
 
 const WhyUsSection = () => {
+  const { t } = useTranslation();
+  // Se obtiene el array de características desde las traducciones
+  const features = t('whyUs.features', { returnObjects: true });
+
   return (
     <section className="why-us">
       <motion.h2 
@@ -35,7 +34,7 @@ const WhyUsSection = () => {
          animate={{ opacity: 1, y: 0 }}
          transition={{ duration: 0.5 }}
       >
-         Why Us?
+         {t('whyUs.title')}
       </motion.h2>
       <motion.div 
          className="cards-row"

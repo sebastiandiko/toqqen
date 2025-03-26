@@ -1,46 +1,55 @@
 {
-    "header": {
-      "home": "Home",
-      "aboutUs": "About Us",
-      "contactUs": "Contact Us"
+  "header": {
+    "home": "Home",
+    "aboutUs": "About Us",
+    "contactUs": "Contact Us"
+  },
+  "cards": {
+    "premiumQuality": {
+      "title": "Premium Quality",
+      "description": "We build digital solutions to the highest standards using cutting-edge technology. Our products are optimized, secure, and reliable—helping your business thrive."
     },
-    "contact": {
-      "title": "Let's Work Together!",
-      "firstName": "First Name",
-      "lastName": "Last Name",
-      "email": "Email Address",
-      "phone": "Phone (Optional)",
-      "message": "Enter your message here...",
-      "sendButton": "Send Message",
-      "success": "Message sent successfully!",
-      "error": "There was an error sending your message. Please try again."
+    "continuousInnovation": {
+      "title": "Continuous Innovation",
+      "description": "We embrace the latest trends to create modern, responsive digital solutions tailored to your needs."
     },
-    "policies": {
-      "title": "Our Policies",
-      "privacy": "Privacy Policy",
-      "cookies": "Cookies Policy",
-      "terms": "Terms & Conditions",
-      "legal": "Legal Notice",
-      "delivery": "Delivery Policy"
-    },
-    "cards": {
-      "premiumQuality": {
-        "title": "Premium Quality",
-        "description": "Our digital solutions, including progressive web applications, websites, and custom technological resources, are crafted with the highest standards using state-of-the-art tools. We deliver optimized, secure, and reliable products that consistently exceed client expectations."
-      },
-      "continuousInnovation": {
-        "title": "Continuous Innovation",
-        "description": "Always at the cutting edge, we integrate the latest trends and technologies to develop modern and responsive digital solutions. Whether you require a robust PWA, a dynamic website, or other tailored tech resources, our innovative approach ensures you stay ahead in the digital landscape."
-      },
-      "expertSupport": {
-        "title": "24/7 Expert Support",
-        "description": "Our dedicated support team is available around the clock to assist you with every aspect of your digital projects. From the initial consultation to post-launch maintenance, we provide personalized and timely support to ensure your digital presence is always performing at its peak."
-      }
-    },
-    "about": {
-        "title": "About Us",
-        "text": "At Toqqen, we transform challenges into opportunities. We craft digital solutions using advanced technology that empower your business to succeed. Our dedicated team is committed to exceeding expectations."
+    "expertSupport": {
+      "title": "24/7 Expert Support",
+      "description": "Our expert team is available around the clock to support your digital journey and ensure your online presence performs at its best."
     }
-      }
-      
-  
+  },
+  "about": {
+    "title": "About Us",
+    "text": "At Toqqen, we provide innovative tech solutions that boost your business, entrepreneurship, or service. We turn challenges into opportunities with efficient, advanced digital strategies."
+  },
+  "technologies": {
+    "title": "Technologies"
+  },
+  "whyUs": {
+    "title": "Why Us?",
+    "features": [
+      "Continuous Innovation",
+      "Personalized Attention",
+      "24/7 Expert Support"
+    ]
+  },
+  "contact": {
+    "title": "Let's Work Together!",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email Address",
+    "phone": "Phone (Optional)",
+    "message": "Enter your message here...",
+    "sendButton": "Send Message",
+    "success": "Message sent successfully!",
+    "error": "There was an error sending your message. Please try again."
+  },
+  "policies": {
+    "title": "Our Policies",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookies Policy",
+    "terms": "Terms & Conditions",
+    "legal": "Legal Notice",
+    "delivery": "Delivery Policy"
+  }
+}

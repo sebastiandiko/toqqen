@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { useTranslation } from 'react-i18next';
 import './TechnologiesBanner.css';
 import reactLogo from './assets/react.png';
 import javaLogo from './assets/javascript.png';
@@ -20,6 +21,7 @@ const technologies = [
 ];
 
 const TechnologiesBanner = () => {
+  const { t } = useTranslation();
   const techItemsRef = useRef([]);
   techItemsRef.current = [];
   
@@ -47,7 +49,7 @@ const TechnologiesBanner = () => {
 
   return (
     <section className="technologies-banner">
-      <h2 className="tech-title">Technologíes</h2>
+      <h2 className="tech-title">{t('technologies.title')}</h2>
       <div className="tech-grid">
         {technologies.map((tech) => (
           <div className="tech-item" key={tech.name} ref={addToRefs}>

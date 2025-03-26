@@ -1,31 +1,55 @@
 {
-    "header": {
-      "home": "Inicio",
-      "aboutUs": "Sobre Nosotros",
-      "contactUs": "Contacto"
+  "header": {
+    "home": "Inicio",
+    "aboutUs": "Sobre Nosotros",
+    "contactUs": "Contacto"
+  },
+  "cards": {
+    "premiumQuality": {
+      "title": "Calidad Premium",
+      "description": "Construimos soluciones digitales con los más altos estándares utilizando tecnología de vanguardia. Nuestros productos son optimizados, seguros y confiables, ayudando a que tu negocio prospere."
     },
-    "about": {
-      "title": "Sobre Nosotros",
-      "text": "En Toqqen, creemos que cada desafío presenta una oportunidad. Aprovechando la tecnología de vanguardia, ofrecemos soluciones innovadoras que permiten a tu negocio prosperar en un entorno digital dinámico. Con pasión y precisión, nuestro equipo se compromete a redefinir las experiencias digitales."
+    "continuousInnovation": {
+      "title": "Innovación Continua",
+      "description": "Adoptamos las últimas tendencias para crear soluciones digitales modernas y responsivas, adaptadas a tus necesidades."
     },
-    "contact": {
-      "title": "¡Trabajemos Juntos!",
-      "firstName": "Nombre",
-      "lastName": "Apellido",
-      "email": "Correo Electrónico",
-      "phone": "Teléfono (Opcional)",
-      "message": "Ingresa tu mensaje aquí...",
-      "sendButton": "Enviar Mensaje",
-      "success": "¡Mensaje enviado exitosamente!",
-      "error": "Ocurrió un error al enviar tu mensaje. Por favor, inténtalo de nuevo."
-    },
-    "policies": {
-      "title": "Nuestras Políticas",
-      "privacy": "Política de Privacidad",
-      "cookies": "Política de Cookies",
-      "terms": "Términos y Condiciones",
-      "legal": "Aviso Legal",
-      "delivery": "Política de Entrega"
+    "expertSupport": {
+      "title": "Soporte Experto 24/7",
+      "description": "Nuestro equipo de expertos está disponible las 24 horas para respaldar tu camino digital y garantizar el máximo rendimiento de tu presencia online."
     }
+  },
+  "about": {
+    "title": "Sobre Nosotros",
+    "text": "En Toqqen, brindamos soluciones tecnológicas innovadoras que impulsan tu negocio, emprendimiento o servicio. Transformamos desafíos en oportunidades con estrategias digitales eficientes y avanzadas."
+  },
+  "technologies": {
+    "title": "Tecnologías"
+  },
+  "whyUs": {
+    "title": "¿Por qué Nosotros?",
+    "features": [
+      "Innovación Continua",
+      "Atención Personalizada",
+      "Soporte Experto 24/7"
+    ]
+  },
+  "contact": {
+    "title": "¡Trabajemos Juntos!",
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "email": "Correo Electrónico",
+    "phone": "Teléfono (Opcional)",
+    "message": "Ingresa tu mensaje aquí...",
+    "sendButton": "Enviar Mensaje",
+    "success": "¡Mensaje enviado exitosamente!",
+    "error": "Ocurrió un error al enviar tu mensaje. Por favor, inténtalo de nuevo."
+  },
+  "policies": {
+    "title": "Nuestras Políticas",
+    "privacy": "Política de Privacidad",
+    "cookies": "Política de Cookies",
+    "terms": "Términos y Condiciones",
+    "legal": "Aviso Legal",
+    "delivery": "Política de Entrega"
   }
-  
+}
