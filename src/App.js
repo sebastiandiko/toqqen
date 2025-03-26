@@ -13,7 +13,7 @@ import PoliciesSection from './components/PoliceSection';
 
 function App() {
   // Estado de idioma (por defecto, 'es')
-  const [language, setLanguage] = useState('es');
+  const [language, setLanguage] = useState('en');
 
   return (
     <div className="App">
